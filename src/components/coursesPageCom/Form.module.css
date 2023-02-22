@@ -11,13 +11,13 @@
 .container {
   width: 33%;
   position: sticky;
-  top: 50%;
+  top: 40%;
   right: 50%;
-  transform: translate(50%, -50%);
-  -webkit-transform: translate(50%, -50%);
-  -moz-transform: translate(50%, -50%);
-  -ms-transform: translate(50%, -50%);
-  -o-transform: translate(50%, -50%);
+  transform: translate(50%, -60%);
+  -webkit-transform: translate(50%, -60%);
+  -moz-transform: translate(50%, -60%);
+  -ms-transform: translate(50%, -60%);
+  -o-transform: translate(50%, -60%);
   z-index: 2000;
 }
 
@@ -37,9 +37,22 @@ form {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   padding: 10px;
+  padding-top: 25px;
+  position: relative;
 }
 label {
-  color: var(--text-color);
+  color: var(--gray-color);
+  position: absolute;
+  top: -14px;
+  right: 5px;
+  z-index: 300;
+  padding: 0px 3px;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 input {
   width: 100%;
@@ -53,23 +66,34 @@ input {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   color: var(--gray-color);
+
+  position: relative;
+  margin-bottom: 3px;
 }
+
 select {
   width: 100%;
   height: 35px;
   border: 1px solid rgba(72, 72, 116, 0.3);
   outline: none;
   margin-bottom: 10px;
-  /* color: var(--gray-color); */
+  color: var(--gray-color);
   padding: 0px 10px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 23px;
 }
-
+input:focus {
+  border: 2px solid var(--text-color);
+  animation: border 0.3s ease;
+  -webkit-animation: border 0.3s ease;
+}
+select:focus {
+  border: 2px solid var(--text-color);
+}
 .error {
   color: red;
   font-size: 10px;
@@ -102,7 +126,6 @@ select {
   font-weight: bolder;
 } */
 .cancel {
-  background-color: inherit;
   border: 2px solid var(--text-color);
   color: var(--text-color);
   font-weight: bold;
@@ -129,5 +152,13 @@ button[disabled] {
     -ms-transform: none;
     -o-transform: none;
     padding: 10px;
+  }
+}
+@keyframes border {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
   }
 }
