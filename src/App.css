@@ -1,5 +1,4 @@
 .App {
   width: 100%;
-  height: max-content;
-  background-color: #ede9fe;
+  background-color: var(--white-color);
 }

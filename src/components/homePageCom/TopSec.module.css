@@ -1,0 +1,91 @@
+.topSection {
+  width: 100%;
+  background-color: var(--first-green);
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.title h2 {
+  text-align: center;
+  font-weight: bold;
+  color: var(--text-color);
+}
+.title p {
+  text-align: center;
+  color: rgb(119, 119, 119);
+}
+.title h2 span {
+  font-size: 2rem;
+}
+.img {
+  width: 50%;
+  height: 100%;
+  margin-right: 10px;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.btn {
+  height: 30px;
+  background-color: var(--text-color);
+  color: var(--white-color);
+  border: none;
+  outline: none;
+  padding: 0px 10px 0px 5px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.link {
+  text-decoration-line: none;
+  -moz-text-decoration-line: none;
+}
+.btn:hover {
+  color: var(--text-color);
+  background-color: var(--first-green);
+  border: 2px solid var(--text-color);
+  font-weight: bold;
+}
+.chevronIcon {
+  font-size: 18px;
+
+  margin-right: 5px;
+}
+@media only screen and (max-width: 600px) {
+  .topSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    margin-top: 20px;
+  }
+  .title h2 {
+    font-size: 19px;
+  }
+  .title p {
+    font-size: 14px;
+  }
+  .img {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .title h2 {
+    font-size: 17px;
+  }
+}

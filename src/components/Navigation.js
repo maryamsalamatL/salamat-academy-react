@@ -4,18 +4,20 @@ import { AiFillHome } from "react-icons/ai";
 
 const Navigation = () => {
   const items = [
-    { name: <AiFillHome />, to: "/", exact: "true" },
+    { name: "خانه", to: "/", exact: "true" },
     { name: "کلاس ها", to: "/courses" },
     { name: "سفارش کتاب", to: "/order" },
   ];
   return (
     <nav>
-      <ul>
+      <ul className={styles.ul}>
         {items.map((item) => {
           return (
-            <li key={item.to}>
+            <li key={item.to} className={styles.li}>
               <NavLink
-                className={styles.link}
+                className={({ isActive }) =>
+                  `${styles.link} ${isActive && styles.active}`
+                }
                 to={item.to}
                 exact={item.exact || "false"}
               >
