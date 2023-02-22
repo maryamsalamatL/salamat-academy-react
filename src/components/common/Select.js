@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const Select = ({ selectOptions, formik }) => {
   return (
     <>
-      <label htmlFor="semester">کلاس</label>
+      {/* <label htmlFor="semester">کلاس</label> */}
       <select
         id="semester"
         name="semester"

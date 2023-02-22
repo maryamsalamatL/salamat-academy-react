@@ -8,6 +8,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Input from "../common/Input";
 import Select from "../common/Select";
+import { FaTimes } from "react-icons/fa";
 
 const initialValues = {
   name: "",
