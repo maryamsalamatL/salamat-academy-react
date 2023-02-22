@@ -11,13 +11,13 @@
 .container {
   width: 33%;
   position: sticky;
-  top: 50%;
+  top: 40%;
   right: 50%;
-  transform: translate(50%, -50%);
-  -webkit-transform: translate(50%, -50%);
-  -moz-transform: translate(50%, -50%);
-  -ms-transform: translate(50%, -50%);
-  -o-transform: translate(50%, -50%);
+  transform: translate(50%, -60%);
+  -webkit-transform: translate(50%, -60%);
+  -moz-transform: translate(50%, -60%);
+  -ms-transform: translate(50%, -60%);
+  -o-transform: translate(50%, -60%);
   z-index: 2000;
 }
 
