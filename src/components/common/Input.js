@@ -1,6 +1,6 @@
 const Input = ({ formik, styles, name, label, type = "text" }) => {
   return (
-    <div style={{ marginBottom: "10px", width: "100%" }}>
+    <div style={{ marginBottom: "20px", width: "100%", position: "relative" }}>
       <label htmlFor={name}>{label}</label>
       <input
         id={name}
