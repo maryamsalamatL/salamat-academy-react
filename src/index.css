@@ -18,9 +18,12 @@
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  direction: rtl;
+
   font-family: "Vazir";
   color: w;
+}
+body {
+  direction: rtl;
 }
 :root {
   --white-color: rgb(255, 255, 255);

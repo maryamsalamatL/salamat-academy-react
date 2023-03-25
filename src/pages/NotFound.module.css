@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+}
+
+.imgBox {
+  width: 100%;
+  height: 90vh;
+  background-color: var(--first-green);
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.link {
+  font-size: large;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-weight: bold;
+}

@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
+import img from "../images/404error.png";
+import styles from "./NotFound.module.css";
+import { FaLevelUpAlt } from "react-icons/fa";
 
 const NotFound = () => {
   return (
-    <>
-      <h3>not found</h3>
-      <h1>404</h1>
-      <Link to="/">go to home page</Link>
-    </>
+    <div className={styles.container}>
+      <div className={styles.imgBox}>
+        <img src={img} className={styles.img} alt="404error"></img>
+      </div>
+      <Link to="/" className={styles.link}>
+        <FaLevelUpAlt />
+        بازگشت به خانه
+      </Link>
+    </div>
   );
 };
 

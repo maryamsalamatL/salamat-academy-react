@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <Navigation />
-      <span className={styles.logo}>SALAMAT ACADEMY</span>
+      <span className={styles.logo}>SALAMAT INSTITUTE</span>
     </header>
   );
 };
