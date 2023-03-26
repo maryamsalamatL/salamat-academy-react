@@ -10,14 +10,14 @@
 
 .container {
   width: 33%;
-  position: sticky;
-  top: 40%;
+  position: fixed;
+  top: 45%;
   right: 50%;
-  transform: translate(50%, -60%);
-  -webkit-transform: translate(50%, -60%);
-  -moz-transform: translate(50%, -60%);
-  -ms-transform: translate(50%, -60%);
-  -o-transform: translate(50%, -60%);
+  transform: translate(50%, -55%);
+  -webkit-transform: translate(50%, -55%);
+  -moz-transform: translate(50%, -55%);
+  -ms-transform: translate(50%, -55%);
+  -o-transform: translate(50%, -55%);
   z-index: 2000;
 }
 

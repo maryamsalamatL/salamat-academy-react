@@ -30,6 +30,7 @@ const Form = ({ id, setIsShow }) => {
     } else if (id === 4) {
       level = "adults";
     }
+
     postRegister(level, { ...formik.values, formId: id })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
@@ -92,6 +93,7 @@ const Form = ({ id, setIsShow }) => {
             type="number"
           />
           <Select selectOptions={selectOptions} formik={formik} />
+
           <div className={styles.btnBox}>
             <button
               type="submit"

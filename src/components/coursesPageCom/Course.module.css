@@ -58,8 +58,9 @@
 @media only screen and (max-width: 600px) {
   .container {
     height: auto;
-    padding: 30px 30px;
+    /* padding: 30px 30px; */
     align-items: center;
+    padding: 15px 5px;
   }
   .info h2 {
     text-align: center;
@@ -67,5 +68,8 @@
   .container.isShow .info {
     height: 0;
     overflow: hidden;
+  }
+  .btn {
+    margin: 15px 0px;
   }
 }
