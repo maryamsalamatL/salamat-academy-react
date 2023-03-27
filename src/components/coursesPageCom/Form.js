@@ -93,7 +93,11 @@ const Form = ({ id, setIsShow }) => {
             type="number"
           />
           <Select selectOptions={selectOptions} formik={formik} />
-
+          <p className={styles.paymentLabel}>
+            پرداخت هزینه برای تکمیل فرم ضروری نیست،درصورت تمایل به صورت حضوری
+            پرداخت کنید.
+          </p>
+          <button className={styles.payBtn}>پرداخت</button>
           <div className={styles.btnBox}>
             <button
               type="submit"
