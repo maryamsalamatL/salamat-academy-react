@@ -2,6 +2,7 @@
   width: 100%;
   background-color: var(--first-green);
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 10px;
   position: relative;
@@ -11,15 +12,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 .title h2 {
   text-align: center;
   font-weight: bold;
   color: var(--text-color);
+  font-size: 19px;
 }
 .title p {
   text-align: center;
   color: rgb(119, 119, 119);
+  font-size: 14px;
 }
 .title h2 span {
   font-size: 2rem;
@@ -28,6 +32,8 @@
   width: 50%;
   height: 100%;
   margin-right: 10px;
+  width: 100%;
+  margin-top: 20px;
 }
 img {
   width: 100%;
@@ -62,30 +68,32 @@ img {
 }
 .chevronIcon {
   font-size: 18px;
-
   margin-right: 5px;
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (min-width: 600px) {
   .topSection {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
   }
   .title {
-    margin-top: 20px;
+    margin-top: 0;
   }
   .title h2 {
-    font-size: 19px;
+    font-size: 1.5rem;
   }
   .title p {
-    font-size: 14px;
+    font-size: 15px;
+  }
+  .title h2 span {
+    font-size: 2.2rem;
   }
   .img {
-    width: 100%;
-    margin-top: 20px;
+    width: 50%;
+    margin-top: 0px;
+  }
+  .btn {
+    height: 34px;
   }
 }
-@media only screen and (max-width: 300px) {
-  .title h2 {
-    font-size: 17px;
-  }
+@media only screen and (min-width: 768px) {
 }

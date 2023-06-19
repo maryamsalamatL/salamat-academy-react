@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./Courses.module.css";
-import img1 from "../images/Vowels-amico.png";
-import img2 from "../images/Vowels-pana.png";
-import img3 from "../images/reading-pana.png";
-import img4 from "../images/Dictionary-pana.png";
+import img1 from "../../images/Vowels-amico.png";
+import img2 from "../../images/Vowels-pana.png";
+import img3 from "../../images/reading-pana.png";
+import img4 from "../../images/Dictionary-pana.png";
 
 const Courses = () => {
   const items = [

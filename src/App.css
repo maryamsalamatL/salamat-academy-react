@@ -1,4 +1,64 @@
 .App {
   width: 100%;
+}
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  /* height: max-content; */
   background-color: var(--white-color);
+
+  position: relative;
+}
+.error {
+  color: red;
+  font-size: 10px;
+}
+.blur {
+  background-color: inherit;
+  color: var(--gray-color);
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  z-index: 300;
+  font-size: 14px;
+  padding: 0px 3px;
+  animation: down 0.3s ease-in-out;
+  -webkit-animation: down 0.3s ease-in-out;
+}
+.focused {
+  color: var(--text-color);
+  background-color: #fff;
+  position: absolute;
+  top: -12px;
+  right: 5px;
+  z-index: 300;
+  padding: 0px 3px;
+  font-size: 14px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  animation: up 0.3s ease-in-out;
+  -webkit-animation: up 0.3s ease-in-out;
+}
+@keyframes up {
+  0% {
+    top: 7px;
+    left: 5px;
+  }
+  100% {
+    top: -12px;
+    left: 5px;
+  }
+}
+@keyframes down {
+  0% {
+    top: -12px;
+    left: 5px;
+  }
+  100% {
+    top: 7px;
+    left: 5px;
+  }
 }

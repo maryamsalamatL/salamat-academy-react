@@ -5,17 +5,16 @@ import {
   getAvailableClasses,
 } from "../../sevices/requestService";
 import { useFormik } from "formik";
-import * as yup from "yup";
+import { object, string, ref, array, boolean, number } from "yup";
 import Input from "../common/Input";
 import Select from "../common/Select";
 import { FaTimes } from "react-icons/fa";
 
 const initialValues = {
   name: "",
-  age: "",
-  semester: "",
   IDcode: "",
-  phoneNumber: "",
+
+  semester: "",
 };
 const Form = ({ id, setIsShow }) => {
   const [selectOptions, setSelectOptions] = useState([]);
@@ -36,14 +35,9 @@ const Form = ({ id, setIsShow }) => {
       .catch((err) => console.log(err));
     setIsShow(false);
   };
-  const validationSchema = yup.object({
-    name: yup.string().required("Name is required"),
-    age: yup.number().required("Age is required").positive().integer(),
-    phoneNumber: yup
-      .string()
-      .required("Phone number is required")
-      .matches(/^[0-9]{10,11}$/, "Phone number is not valid"),
-    IDcode: yup.number().required("ID is required"),
+  const validationSchema = object({
+    name: string().required("لطفا نام خود را وارد کنید !"),
+    IDcode: number().required("لطفا کد ملی خود را وارد کنید !"),
   });
 
   const formik = useFormik({
@@ -56,11 +50,11 @@ const Form = ({ id, setIsShow }) => {
   useEffect(() => {
     getAvailableClasses()
       .then((res) => {
-        setSelectOptions(["انتخاب ترم", ...res.data]);
+        setSelectOptions(res.data);
       })
       .catch();
   }, []);
-
+  console.log(selectOptions);
   return (
     <>
       <div className={styles.container}>
@@ -71,20 +65,7 @@ const Form = ({ id, setIsShow }) => {
             styles={styles}
             label="نام و نام خانوادگی"
           />
-          <Input
-            formik={formik}
-            name="age"
-            styles={styles}
-            label="سن"
-            type="number"
-          />
-          <Input
-            formik={formik}
-            name="phoneNumber"
-            styles={styles}
-            label="شماره تماس"
-            type="number"
-          />
+
           <Input
             formik={formik}
             name="IDcode"
@@ -92,7 +73,12 @@ const Form = ({ id, setIsShow }) => {
             label="شماره ملی"
             type="number"
           />
-          <Select selectOptions={selectOptions} formik={formik} />
+          <Select
+            selectOptions={selectOptions}
+            formik={formik}
+            name="semester"
+            styles={styles}
+          />
           <p className={styles.paymentLabel}>
             پرداخت هزینه برای تکمیل فرم ضروری نیست،درصورت تمایل به صورت حضوری
             پرداخت کنید.

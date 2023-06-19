@@ -6,7 +6,7 @@
   justify-content: center;
 }
 .table {
-  width: 40%;
+  width: 98%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -38,6 +38,7 @@
   color: var(--text-color);
   border-bottom: 1px solid #dddddd;
   padding: 0px 5px;
+  font-size: 13px;
 }
 .name {
   width: 30%;
@@ -66,16 +67,17 @@
 .liTitle {
   border-right: 1px solid #dddddd;
 }
-@media only screen and (max-width: 800px) {
+
+@media only screen and (min-width: 600px) {
   .table {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .table {
-    width: 100%;
+    width: 60%;
   }
   .division {
-    font-size: 13px;
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .table {
+    width: 40%;
   }
 }

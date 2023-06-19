@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const Select = ({ selectOptions, formik }) => {
+const Select = ({ selectOptions, formik, name, styles }) => {
   return (
     <>
       {/* <label htmlFor="semester">کلاس</label> */}
@@ -9,10 +9,17 @@ const Select = ({ selectOptions, formik }) => {
         name="semester"
         {...formik.getFieldProps("semster")}
       >
-        {selectOptions.map((c) => {
-          return <option key={c}>{c}</option>;
+        {selectOptions.map((option) => {
+          return (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          );
         })}
       </select>
+      {formik.errors[name] && formik.touched[name] && (
+        <p className={styles.error}>{formik.errors[name]}</p>
+      )}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import img from "../images/404error.png";
+import img from "../../images/404error.png";
 import styles from "./NotFound.module.css";
 import { FaLevelUpAlt } from "react-icons/fa";
 

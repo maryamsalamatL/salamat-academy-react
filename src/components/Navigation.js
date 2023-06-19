@@ -6,7 +6,7 @@ const Navigation = () => {
   const items = [
     { name: "خانه", to: "/", exact: "true" },
     { name: "کلاس ها", to: "/courses" },
-    { name: "سفارش کتاب", to: "/order" },
+    { name: "ورود", to: "/login" },
   ];
   return (
     <nav>

@@ -25,6 +25,9 @@
 body {
   direction: rtl;
 }
+button {
+  cursor: pointer;
+}
 :root {
   --white-color: rgb(255, 255, 255);
   --first-green: rgb(237, 252, 254);

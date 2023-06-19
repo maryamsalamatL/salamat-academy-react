@@ -1,12 +1,10 @@
 .container {
   width: 100%;
-  min-height: 100vh;
-  max-height: auto;
   height: auto;
-  padding: 100px 50px 20px 50px;
+  padding: 15px 5px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   position: relative;
 }
@@ -19,10 +17,11 @@
 
 .info h2 {
   margin: 20px 0px;
+  text-align: center;
 }
 .btn {
   width: 150px;
-  height: 40px;
+  height: 34px;
   border: none;
   outline: none;
   background-color: var(--text-color);
@@ -33,6 +32,7 @@
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   font-size: 18px;
+  margin: 15px 10px;
 }
 .btn:hover {
   color: var(--text-color);
@@ -52,24 +52,25 @@
   text-align: end;
   font-size: 1.3rem;
 }
+.container.isShow .info {
+  height: 0;
+  overflow: hidden;
+}
 .isShow {
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 600px) {
   .container {
-    height: auto;
-    /* padding: 30px 30px; */
-    align-items: center;
-    padding: 15px 5px;
+    padding: 60px 50px 20px 50px;
   }
   .info h2 {
-    text-align: center;
-  }
-  .container.isShow .info {
-    height: 0;
-    overflow: hidden;
+    margin: 20px 0px;
+    text-align: right;
   }
   .btn {
-    margin: 15px 0px;
+    width: 150px;
+    height: 38px;
   }
+}
+@media only screen and (min-width: 768px) {
 }
