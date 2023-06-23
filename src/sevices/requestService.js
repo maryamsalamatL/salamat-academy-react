@@ -1,14 +1,16 @@
 import http from "./httpService";
 
-const postRegister = (level, newStudent) => {
-  const header = {
-    headers: {
-      Authorization: "SECURE TOKEN",
-    },
-  };
-  return http.post(`/${level}`, newStudent, header);
+const postTerm = ({ title, category }) => {
+  return http.post("/terms", { title, category, id: Date.now() });
 };
-const getAvailableClasses = () => {
-  return http.get("/available");
+const deleteTerm = (id) => {
+  return http.delete(`/terms/${id}`);
 };
-export { postRegister, getAvailableClasses };
+
+const getTerms = () => {
+  return http.get("/terms");
+};
+const signupUser = (user) => {
+  return http.post("/signup", user);
+};
+export { getTerms, postTerm, deleteTerm, signupUser };

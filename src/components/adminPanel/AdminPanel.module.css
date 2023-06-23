@@ -1,0 +1,268 @@
+.mainContainer {
+  width: 100%;
+  min-height: 90vh;
+  color: var(--text-color);
+  background: linear-gradient(
+    to bottom,
+    rgba(146, 213, 205, 0.1),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255)
+  );
+  position: relative;
+}
+.topSec {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.topSec ul {
+  display: flex;
+  flex-direction: column;
+}
+.topSec ul li {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.topSec ul li span {
+  font-weight: bold;
+  color: var(--third-green);
+}
+.termSec {
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  color: var(--gray-color);
+  border-top: 1px solid rgba(73, 73, 140, 0.4);
+}
+.termsList div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.termsList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(146, 156, 213, 0.2);
+  padding: 5px 0px;
+  font-size: 14px;
+}
+.termsList li button {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: var(--red-color);
+}
+
+.showBtn {
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+  font-size: 14px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.termForm {
+  box-shadow: none;
+  margin-bottom: 10px;
+  display: flex;
+  border: 1px solid rgba(146, 156, 213, 0.3);
+  padding: 0.5rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.termForm input[type="text"] {
+  width: 100%;
+  height: 32px;
+  outline: none;
+  margin: 5px 0px;
+  border: 1px solid rgba(146, 156, 213, 0.2);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.termForm .inputController {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.radioInputController {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.radioInputController label {
+  margin-left: 5px;
+  color: var(--gray-color);
+}
+.termForm div input[type="radio"] {
+  width: 15px;
+}
+.termForm button {
+  height: 32px;
+  width: 100%;
+  background-color: var(--text-color);
+  border: none;
+  color: var(--white-color);
+  outline: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.studentsContainer {
+  border-top: 1px solid rgba(73, 73, 140, 0.4);
+  padding: 0.5rem;
+  padding-bottom: 2rem;
+}
+.studentsContainer p {
+  margin-bottom: 10px;
+}
+.studentsContainer ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 15px;
+}
+.studentsContainer ul li {
+  list-style-type: decimal;
+  color: var(--gray-color);
+}
+.studentsContainer ul li a {
+  color: var(--gray-color);
+}
+
+.modalContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(94, 96, 108, 0.3);
+  z-index: 2000;
+}
+.modal {
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  width: 250px;
+  height: max-content;
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(94, 96, 108, 0.2);
+  padding: 1rem 0.5rem;
+  color: var(--gray-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transform: translateX(50%);
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+}
+.modalBtns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modalBtns button {
+  width: 49%;
+  padding: 5px;
+  font-weight: bold;
+  outline: none;
+  border: 2px solid var(--text-color);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.cancel {
+  background-color: var(--text-color);
+  color: var(--white-color);
+}
+.delete {
+  background-color: var(--white-color);
+  color: var(--text-color);
+  color: var(--text-color);
+}
+@media only screen and (min-width: 600px) {
+  .mainContainer {
+  }
+  .topSec {
+    padding: 2rem 1.5rem;
+  }
+  .topSec ul li {
+    margin-bottom: 20px;
+  }
+  .termSec {
+    padding: 2rem 1.5rem;
+  }
+  .termsList li {
+    font-size: 16px;
+  }
+  .termsList h4 {
+    font-size: 17px;
+  }
+  .showBtn {
+    font-size: 16px;
+  }
+  .termsList li button {
+    font-size: 16px;
+  }
+  .termForm {
+    padding: 1rem;
+  }
+  .termForm input[type="text"] {
+    height: 36px;
+  }
+  .termForm .inputController {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .radioInputController {
+    margin-left: 15px;
+  }
+
+  .termForm button {
+    height: 36px;
+  }
+
+  .studentsContainer {
+    padding: 2rem 1.5rem;
+  }
+}

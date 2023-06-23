@@ -1,9 +1,6 @@
 import styles from "./Form.module.css";
 import { useState, useEffect } from "react";
-import {
-  postRegister,
-  getAvailableClasses,
-} from "../../sevices/requestService";
+import { getTerms } from "../../sevices/requestService";
 import { useFormik } from "formik";
 import { object, string, ref, array, boolean, number } from "yup";
 import Input from "../common/Input";
@@ -13,7 +10,6 @@ import { FaTimes } from "react-icons/fa";
 const initialValues = {
   name: "",
   IDcode: "",
-
   semester: "",
 };
 const Form = ({ id, setIsShow }) => {
@@ -30,10 +26,10 @@ const Form = ({ id, setIsShow }) => {
       level = "adults";
     }
 
-    postRegister(level, { ...formik.values, formId: id })
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-    setIsShow(false);
+    // postRegister(level, { ...formik.values, formId: id })
+    //   .then((res) => console.log(res))
+    //   .catch((err) => console.log(err));
+    // setIsShow(false);
   };
   const validationSchema = object({
     name: string().required("لطفا نام خود را وارد کنید !"),
@@ -47,14 +43,14 @@ const Form = ({ id, setIsShow }) => {
     validateOnMount: true,
   });
 
-  useEffect(() => {
-    getAvailableClasses()
-      .then((res) => {
-        setSelectOptions(res.data);
-      })
-      .catch();
-  }, []);
-  console.log(selectOptions);
+  // useEffect(() => {
+  //   getAvailableClasses()
+  //     .then((res) => {
+  //       setSelectOptions(res.data);
+  //     })
+  //     .catch();
+  // }, []);
+
   return (
     <>
       <div className={styles.container}>

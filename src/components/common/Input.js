@@ -4,7 +4,6 @@ const Input = ({ formik, name, label, type = "text" }) => {
   const ref = useRef();
   const focusHandler = () => {
     ref.current.className = "focused";
-    console.log(ref.current);
   };
   const blurHandler = (e) => {
     const value = e.target.value;

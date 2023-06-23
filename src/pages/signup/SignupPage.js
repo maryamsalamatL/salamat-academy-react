@@ -6,7 +6,7 @@ import { useAuthActions } from "../../provider/AuthProvider";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import styles from "./SignupPage.module.css";
 import Input from "../../components/common/Input";
-
+import { signupUser } from "../../sevices/requestService";
 const initialValues = {
   name: "",
   age: "",
@@ -22,13 +22,12 @@ const validationSchema = object({
   phoneNumber: string()
     .required("لطفا شماره تماس خود را وارد کنید")
     .matches(/^[0-9]{10,11}$/, "ساختار شماره تماس قابل قبول نیست !"),
-  password: string()
-    .required("لطفا رمز وارد کنید")
-    .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
-      "رمز شما باید شامل 8 کارکتر، یک حرف بزرگ،یک حرف کوچک،یک عدد،یک کارکتر خاص باشد"
-      // "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
-    ),
+  password: string().required("لطفا رمز وارد کنید"),
+  // .matches(
+  //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+  //   "رمز شما باید شامل 8 کارکتر، یک حرف بزرگ،یک حرف کوچک،یک عدد،یک کارکتر خاص باشد"
+  //   // "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+  // ),
   passwordConfirm: string()
     .required("لطفا رمز خود را تکرار کنید")
     .oneOf([ref("password"), null], "رمز تطابق ندارد"),
@@ -44,25 +43,27 @@ const SignupPage = () => {
   const redirect = searchParams.get("redirect") || "";
 
   const onSubmit = (values) => {
-    // const { name, email, password, phoneNumber } = values;
-    // const userData = {
-    //   name,
-    //   email,
-    //   password,
-    //   phoneNumber,
-    // };
-    // signupUser(userData)
-    //   .then(({ data }) => {
-    //     setAuth(data);
-    //     localStorage.setItem("authState", JSON.stringify(data));
-    //     setError(null);
-    //     navigate(`/${redirect}`);
-    //   })
-    //   .catch((err) => {
-    //     if (err.response && err.response.data.message) {
-    //       setError(err.response.data.message);
-    //     }
-    //   });
+    const { name, age, password, phoneNumber, IDcode } = values;
+    const userData = {
+      name,
+      age,
+      IDcode,
+      phoneNumber,
+      password,
+    };
+    signupUser(userData)
+      .then(({ data }) => {
+        setAuth(data);
+        localStorage.setItem("authState", JSON.stringify(data));
+        setError(null);
+        // navigate("/");
+      })
+      .catch((err) => {
+        //  check !!
+        if (err.response && err.response.data.message) {
+          setError(err.response.data.message);
+        }
+      });
   };
   const formik = useFormik({
     initialValues,

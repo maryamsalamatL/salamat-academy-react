@@ -1,12 +1,18 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.css";
 import { AiFillHome } from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
+import { useAuth } from "../../provider/AuthProvider";
 
 const Navigation = () => {
+  const auth = useAuth();
   const items = [
     { name: "خانه", to: "/", exact: "true" },
     { name: "کلاس ها", to: "/courses" },
-    { name: "ورود", to: "/login" },
+    {
+      name: auth ? <FaUserCircle /> : "ورود",
+      to: auth ? "/profile" : "/login",
+    },
   ];
   return (
     <nav>
