@@ -6,17 +6,26 @@ import Form from "./Form";
 import { TfiBackRight } from "react-icons/tfi";
 import courses from "./courses";
 import Table from "../common/Table";
-
-const Course = (props) => {
+import { useAuth } from "../../provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
+const Course = () => {
   const params = useParams();
-
   const [course, setCourse] = useState({});
   const [isShow, setIsShow] = useState(false);
+  const auth = useAuth();
+  const navigate = useNavigate();
   useEffect(() => {
     const findedCourse = courses.find((c) => c.id === parseInt(params.id));
     setCourse(findedCourse);
   }, []);
-
+  const clickHandler = (e) => {
+    e.preventDefault();
+    if (!auth) {
+      navigate(`/login?redirect=courses/${params.id}`);
+    } else {
+      setIsShow(true);
+    }
+  };
   return (
     <div className={`${styles.container} ${isShow && styles.isShow}`}>
       <div className={styles.info}>
@@ -24,7 +33,7 @@ const Course = (props) => {
         <p>{course.desc}</p>
       </div>
       {course.id && <Table course={course} />}
-      <button className={styles.btn} onClick={() => setIsShow(true)}>
+      <button className={styles.btn} onClick={clickHandler}>
         ثبت نام
       </button>
       {isShow && <Form id={course.id} setIsShow={setIsShow} />}

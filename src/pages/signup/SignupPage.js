@@ -56,7 +56,7 @@ const SignupPage = () => {
         setAuth(data);
         localStorage.setItem("authState", JSON.stringify(data));
         setError(null);
-        // navigate("/");
+        navigate(`/${redirect}`);
       })
       .catch((err) => {
         //  check !!

@@ -2,25 +2,26 @@ import { useEffect } from "react";
 
 const Select = ({ selectOptions, formik, name, styles }) => {
   return (
-    <>
-      {/* <label htmlFor="semester">کلاس</label> */}
+    <div style={{ marginBottom: "20px", width: "100%" }}>
       <select
-        id="semester"
-        name="semester"
-        {...formik.getFieldProps("semster")}
+        id={name}
+        name={name}
+        {...formik.getFieldProps({ name })}
+        onClick={(e) => console.log(e.target.value)}
       >
+        <option value="">انتخاب کلاس</option>
         {selectOptions.map((option) => {
           return (
-            <option key={option.value} value={option.value}>
-              {option.label}
+            <option key={option.id} value={option.title}>
+              {option.title}
             </option>
           );
         })}
       </select>
       {formik.errors[name] && formik.touched[name] && (
-        <p className={styles.error}>{formik.errors[name]}</p>
+        <p className="error">{formik.errors[name]}</p>
       )}
-    </>
+    </div>
   );
 };
 

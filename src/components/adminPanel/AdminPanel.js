@@ -18,6 +18,7 @@ const AdminPanel = () => {
   }, []);
   const modalHandler = (e, id) => {
     e.preventDefault();
+
     setIsModalShow(true);
     setDeletedItemId(id);
   };
@@ -67,7 +68,7 @@ const AdminPanel = () => {
               setIsFormShow={setIsFormShow}
             />
           )}
-          {terms &&
+          {terms.length ? (
             terms.map((t) => (
               <li key={t.id}>
                 <p>{t.title}</p>
@@ -76,13 +77,16 @@ const AdminPanel = () => {
                   <FaTrashAlt />
                 </button>
               </li>
-            ))}
+            ))
+          ) : (
+            <p>هیچ کلاسی در حال برگذاری نیست.</p>
+          )}
         </ul>
       </section>
       {isModalShow && (
         <Modal setIsModalShow={setIsModalShow} deleteHandler={deleteHandler} />
       )}
-      <StudentsList />
+      <StudentsList terms={terms} />
     </div>
   );
 };
@@ -128,17 +132,18 @@ const TermInformation = ({ setTerms, setIsFormShow }) => {
           <label htmlFor="minors">خردسالان</label>
           <input
             type="radio"
-            value="خردسالان"
+            value="minors"
             id="minors"
             name="category"
             onChange={(e) => setSelectedCategory(e.target.value)}
+            // onClick={(e) => console.log(e.target.previousSibling.textContent)}
           />
         </div>
         <div className={styles.radioInputController}>
           <label htmlFor="children">کودکان</label>
           <input
             type="radio"
-            value="کودکان"
+            value="children"
             id="children"
             name="category"
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -148,7 +153,7 @@ const TermInformation = ({ setTerms, setIsFormShow }) => {
           <label htmlFor="teenagers">نوجوانان</label>
           <input
             type="radio"
-            value="نوجوانان"
+            value="teenagers"
             id="teenagers"
             name="category"
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -158,7 +163,7 @@ const TermInformation = ({ setTerms, setIsFormShow }) => {
           <label htmlFor="adults">بزرگسالان</label>
           <input
             type="radio"
-            value="بزرگسالان"
+            value="adults"
             id="adults"
             name="category"
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -170,16 +175,16 @@ const TermInformation = ({ setTerms, setIsFormShow }) => {
   );
 };
 
-const StudentsList = () => {
-  const [terms, setTerms] = useState([]);
+const StudentsList = ({ terms }) => {
+  // const [terms, setTerms] = useState([]);
 
-  useEffect(() => {
-    getTerms()
-      .then(({ data }) => {
-        setTerms(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   getTerms()
+  //     .then(({ data }) => {
+  //       setTerms(data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
   return (
     <section className={styles.studentsContainer}>
       <p>برای مشاهده اطلاعات دانش اموزان روی کلاس مدنظر کلیک کنید .</p>

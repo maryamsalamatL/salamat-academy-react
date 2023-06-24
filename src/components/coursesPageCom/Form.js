@@ -10,30 +10,32 @@ import { FaTimes } from "react-icons/fa";
 const initialValues = {
   name: "",
   IDcode: "",
-  semester: "",
+  term: "",
 };
 const Form = ({ id, setIsShow }) => {
   const [selectOptions, setSelectOptions] = useState([]);
-  const onSubmit = () => {
-    let level = "";
-    if (id === 1) {
-      level = "minors";
-    } else if (id === 2) {
-      level = "children";
-    } else if (id === 3) {
-      level = "teenagers";
-    } else if (id === 4) {
-      level = "adults";
-    }
+  let category = "";
+  if (id === 1) {
+    category = "minors";
+  } else if (id === 2) {
+    category = "children";
+  } else if (id === 3) {
+    category = "teenagers";
+  } else if (id === 4) {
+    category = "adults";
+  }
 
+  const onSubmit = (values) => {
     // postRegister(level, { ...formik.values, formId: id })
     //   .then((res) => console.log(res))
     //   .catch((err) => console.log(err));
     // setIsShow(false);
+    console.log(values);
   };
   const validationSchema = object({
     name: string().required("لطفا نام خود را وارد کنید !"),
     IDcode: number().required("لطفا کد ملی خود را وارد کنید !"),
+    term: string().required("لطفا کلاس خود را انتخاب کنید !"),
   });
 
   const formik = useFormik({
@@ -43,13 +45,17 @@ const Form = ({ id, setIsShow }) => {
     validateOnMount: true,
   });
 
-  // useEffect(() => {
-  //   getAvailableClasses()
-  //     .then((res) => {
-  //       setSelectOptions(res.data);
-  //     })
-  //     .catch();
-  // }, []);
+  useEffect(() => {
+    getTerms()
+      .then((res) => {
+        const data = res.data.filter((item) => item.category === category);
+        setSelectOptions(data);
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, []);
 
   return (
     <>
@@ -72,7 +78,7 @@ const Form = ({ id, setIsShow }) => {
           <Select
             selectOptions={selectOptions}
             formik={formik}
-            name="semester"
+            name="term"
             styles={styles}
           />
           <p className={styles.paymentLabel}>

@@ -1,5 +1,46 @@
 {
-  "terms": [],
+  "terms": [
+    {
+      "title": "ef",
+      "category": "minors",
+      "id": 1687595091728
+    },
+    {
+      "title": "ewf",
+      "category": "children",
+      "id": 1687595096391
+    },
+    {
+      "title": "ef",
+      "category": "teenagers",
+      "id": 1687595099281
+    },
+    {
+      "title": "efe",
+      "category": "adults",
+      "id": 1687595113567
+    },
+    {
+      "title": "fgh",
+      "category": "minors",
+      "id": 1687622798012
+    },
+    {
+      "title": "xhg",
+      "category": "minors",
+      "id": 1687622802451
+    },
+    {
+      "title": "xfghfgh",
+      "category": "minors",
+      "id": 1687622807515
+    },
+    {
+      "title": "xfghfgh",
+      "category": "minors",
+      "id": 1687622807762
+    }
+  ],
   "signup": [
     {
       "name": "ert34",
@@ -8,6 +49,22 @@
       "phoneNumber": "4343434343",
       "password": "1234",
       "id": 2
+    },
+    {
+      "name": "wewe",
+      "age": "23",
+      "IDcode": "2323",
+      "phoneNumber": "2312322123",
+      "password": "1234Msl@",
+      "id": 3
+    },
+    {
+      "name": "rr",
+      "age": "44",
+      "IDcode": "44",
+      "phoneNumber": "4444444444",
+      "password": "1234Msl@",
+      "id": 4
     }
   ]
 }
