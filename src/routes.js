@@ -5,7 +5,7 @@ import NotFound from "./pages/notFound/NotFound";
 import Course from "./components/coursesPageCom/Course";
 import Signup from "./pages/signup/SignupPage";
 import Login from "./pages/login/LoginPage";
-import UserProfile from "./pages/profile/UserProfile";
+import Panel from "./pages/panel/Panel";
 
 const routes = [
   { path: "/courses/:id", element: <Course /> },
@@ -13,7 +13,7 @@ const routes = [
   { path: "/order", element: <BookOrder /> },
   { path: "/signup", element: <Signup /> },
   { path: "/login", element: <Login /> },
-  { path: "/profile", element: <UserProfile /> },
+  { path: "/profile", element: <Panel /> },
   { path: "/", element: <Home />, exact: true },
   { path: "*", element: <NotFound /> },
 ];
